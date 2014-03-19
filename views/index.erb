@@ -1,0 +1,103 @@
+
+<link rel="stylesheet" href="stylesheet.css">
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<!-- <div id="divindex">
+	<div id="welcome">
+		<h1>Welcome to the <br>GroupJeuneVLG</h1>
+
+		<p id="para"> Le 17 janvier, nous avons en effet commencé à former 15 jeunes<br> au développement web à Villeneuve-la-Garenne, au coeur de la cité <br>de La Noue plus précisément. Objectif : les former en 6 mois pour <br> qu'ils acquièrent des compétences informatiques employables et <br> reprennent en main leur vie professionnelle.  </p>
+	</div>
+	<div>	
+		<a href="/accueil"><input id="button" type="button" name="" value="Inscription">
+	</div>
+</div> -->
+
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+
+<a href="#fake" class="enter">ENTRER</a>
+<div class="page">
+  <div class="main">
+
+
+
+    <!--  Content of page -->
+    <header class="clearfix">
+      <div class='container'>
+        <div class="intro">
+          
+         <h1 id="">Welcome to the <br>GroupJeuneVLG</h1></a>
+          <p id="para"> Le 17 janvier, nous avons en effet commencé à former 15 jeunes<br> au développement web à Villeneuve-la-Garenne, au coeur de la cité <br>de La Noue plus précisément. Objectif : les former en 6 mois pour <br> qu'ils acquièrent des compétences informatiques employables et <br> reprennent en main leur vie professionnelle.</p>
+          
+		<a href="/accueil"><input id="button" type="button" name="" value="En savoir plus ...">
+	
+        </div>
+      </div>
+    </header>
+
+
+    
+        <!-- / Content of page -->
+
+
+      </div>
+    </div>
+    <script>
+    var preloader = (function(){
+  
+  'use-strict';
+  
+  // Vars
+  var main = $('.main'),
+      btn = $('.enter'),
+      page = $('.page');
+  
+  
+  return {
+     
+    run: function(){
+      // show on load
+      main.show();
+      // apend and prepend html 
+      main.prepend(this.tmpl.tl + this.tmpl.tr);
+      main.append(this.tmpl.bl + this.tmpl.br);
+      // on click open site
+     this.click_btn();
+    },
+    
+    
+    tmpl:{
+      'tl': '<span class="tl"></span>',
+      'tr': '<span class="tr"></span>',
+      'bl': '<span class="bl"></span>',
+      'br': '<span class="br"></span>'
+    },
+    
+    
+    click_btn: function(){
+      btn.on('click',function(){
+        page.addClass('loaded');
+        btn.addClass('hideThis');
+        preloader.animations();
+      });  
+    },
+    
+    // for firefox i try in css but not work
+    animations: function(){
+      var tl = $('.loaded .tl'),
+          tr = $('.loaded .tr'),
+          bl = $('.loaded .bl'),
+          br = $('.loaded .br');
+      
+      tl.delay(800).animate({top:'-100%',left:'-100%'},500);
+      tr.delay(600).animate({top:'-100%',left:'100%'},500);
+      bl.delay(400).animate({top:'100%',left:'100%'},500);
+      br.delay(200).animate({top:'100%',left:'-100%'},500);
+      btn.remove();
+    }
+  };
+})(jQuery);
+
+preloader.run();</script>
+
